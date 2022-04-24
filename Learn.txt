@@ -1,0 +1,8 @@
+Add the ! as a postfix to the variable name as follows
+
+class Person {
+  name!: string
+}
+When you add an exclamation mark after variable/property name, you’re telling to TypeScript that you’re certain that value is not null or undefined.
+
+You can also get rid of warning by setting strictPropertyInitialization: false inside tsconfig.json
