@@ -7,8 +7,8 @@ class TeamController {
 		try {
             const { name } = req.body;
             const team = await Team.findOne({ where: { name } });
-            if (team) {
-				return res.status(409).json({  msg: "Team with same name already exists"});
+	        if (team) {
+			  return res.status(409).json({  msg: "Team with same name already exists"});
 			}
 			const record = await Team.create({ ...req.body });
 			return res.status(201).json({ 'msg' : 'Team created successfully',record });

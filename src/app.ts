@@ -1,5 +1,8 @@
 import express from "express";
 import bodyParser from 'body-parser';
+import adminRoutes from './routes/admin.routes'
+import userRoutes from './routes/user.routes'
+import { notFoundHandler } from './middlewares/not-found'
 
 
 const app = express();
@@ -20,6 +23,8 @@ app.use((req, res, next) => {
 });
 
 
-
+app.use('/api/v1/admin', adminRoutes);
+app.use('/api/v1/user', userRoutes);
+app.use(notFoundHandler);
 
 export default app;

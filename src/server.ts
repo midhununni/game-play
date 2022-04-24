@@ -1,12 +1,10 @@
 import http from 'http';
 import app from './app'
 import config from './config/config';
-import adminRoutes from './routes/admin.routes'
-import userRoutes from './routes/user.routes'
-import { notFoundHandler } from './middlewares/not-found'
 
-// import dbInit from './db'
-// dbInit()
+
+import dbInit from './db'
+dbInit()
 
 
 
@@ -23,10 +21,6 @@ import { notFoundHandler } from './middlewares/not-found'
 //     next();
 // });
 
-app.use('/api/v1/admin', adminRoutes);
-app.use('/api/v1/user', userRoutes);
-app.use(notFoundHandler);
-
 
 const httpServer = http.createServer(app);
-httpServer.listen(config.server.port, () => console.log(`Server is running ${config.server.hostname}:${config.server.port}`));
+httpServer.listen(3000, () => console.log(`Server is running `));

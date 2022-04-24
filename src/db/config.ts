@@ -6,9 +6,9 @@ const dbHost = process.env.DB_HOST
 const dbDriver = process.env.DB_DRIVER as Dialect
 const dbPassword = process.env.DB_PASSWORD
 
-const sequelizeConnection = new Sequelize(dbName, dbUser, dbPassword, {
-  host: dbHost,
-  dialect: dbDriver
+const sequelizeConnection = new Sequelize('game_play', 'root', 'Mypassword123*', {
+  host: 'localhost',
+  dialect: 'mysql'
 })
 
 export default sequelizeConnection
