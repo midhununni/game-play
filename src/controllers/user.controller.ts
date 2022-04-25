@@ -7,7 +7,6 @@ class UserController {
 		try {
             const { name } = req.body;
             const user = await User.findOne({ where: { name } });
-
 			if (user) {
 				return res.status(409).json({ msg: "User with same username already exists" });
 			}
@@ -22,11 +21,10 @@ class UserController {
     async signupMatch(req: Request, res: Response) {
 		try {
             const { match_id, user_id, team } = req.body;
-            const match = await Match.findOne({ where: { id : match_id } });
+            const match = await Match.findOne({ where: { id : match_id },raw:true });
             if (!match) {
 				return res.status(404).json({ msg: "Match not found" });
 			}
-            
             if(match.status != 'PUBLISHED'){
                 return res.status(400).json({ msg: "Can't signup for a match that already started or ended" });
             }

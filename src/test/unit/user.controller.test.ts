@@ -48,7 +48,7 @@ describe("UserController.registerUser", () => {
         User.findOne = jest.fn().mockReturnValue(rejectedPromise)
         req.body = newUser;
         await UserController.registerUser(req, res);
-        expect(log4js.getLogger().error).toHaveBeenCalledTimes(1)
+        expect(log4js.getLogger().error).toBeCalled()
         expect(res.statusCode).toBe(500);
     })
     
@@ -100,7 +100,7 @@ describe("UserController.signupUser", () => {
         Match.findOne = jest.fn().mockReturnValue(rejectedPromise)
         req.body = signupUser;
         await UserController.signupMatch(req, res);
-        expect(log4js.getLogger().error).toHaveBeenCalledTimes(1)
+        expect(log4js.getLogger().error).toBeCalled()
         expect(res.statusCode).toBe(500);
     })
     

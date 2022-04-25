@@ -44,7 +44,7 @@ describe("MatchController.createMatch", () => {
         Match.create = jest.fn().mockReturnValue(rejectedPromise)
         req.body = newMatch;
         await MatchController.createMatch(req, res);
-        expect(log4js.getLogger().error).toHaveBeenCalledTimes(1)
+        expect(log4js.getLogger().error).toBeCalled()
         expect(res.statusCode).toBe(500);
     })
     
@@ -76,7 +76,7 @@ describe("MatchController.updateMatch", () => {
         Match.findOne = jest.fn().mockReturnValue(rejectedPromise)
         req.body = updateMatch;
         await MatchController.updateMatch(req, res);
-        expect(log4js.getLogger().error).toHaveBeenCalledTimes(1)
+        expect(log4js.getLogger().error).toBeCalled()
         expect(res.statusCode).toBe(500);
     })
     
@@ -115,7 +115,7 @@ describe("MatchController.listMatch", () => {
         const rejectedPromise = Promise.reject(error)
         Match.findAll = jest.fn().mockReturnValue(rejectedPromise)
         await MatchController.listMatch(req, res);
-        expect(log4js.getLogger().error).toHaveBeenCalledTimes(1)
+        expect(log4js.getLogger().error).toBeCalled()
         expect(res.statusCode).toBe(500);
     })
     

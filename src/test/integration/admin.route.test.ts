@@ -1,3 +1,4 @@
+jest.mock('../../db/models')
 import request from "supertest";
 import app from "../../app";
 import newMatch from '../mock-data/new-match.json'
@@ -6,7 +7,7 @@ import updateMatchStatus from '../mock-data/update-match.json'
 import newMatchError from '../mock-data/new-match-validate-error.json'
 import {Match} from '../../db/models'
 
-jest.mock('../../db/models')
+
 const endpointUrl = "/api/v1/admin"
 
 describe("/create-match", () => {

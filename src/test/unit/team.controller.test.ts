@@ -47,7 +47,7 @@ describe("TeamController.createTeam", () => {
         Team.findOne = jest.fn().mockReturnValue(rejectedPromise)
         req.body = newTeam;
         await TeamController.createTeam(req, res);
-        expect(log4js.getLogger().error).toHaveBeenCalledTimes(1)
+        expect(log4js.getLogger().error).toBeCalled()
         expect(res.statusCode).toBe(500);
     })
     

@@ -6,6 +6,7 @@ class TeamValidator {
 			body('name')
                 .notEmpty()
 				.withMessage('The name value should not be empty')
+				.trim()
 		];
 	}
 }

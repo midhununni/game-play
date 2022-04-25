@@ -32,11 +32,11 @@ class UserMatch extends Model<UserMatchAttributes, UserMatchInput> implements Us
       primaryKey: true,
     },
     user: {
-      type: DataTypes.INTEGER,
+      type: DataTypes.INTEGER.UNSIGNED,
       allowNull: false
     },
     match: {
-      type: DataTypes.INTEGER,
+      type: DataTypes.INTEGER.UNSIGNED,
       allowNull: false
     },
     team: {
