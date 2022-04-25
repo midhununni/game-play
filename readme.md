@@ -13,12 +13,6 @@ npm i
 ```python
 nmp run dev
 ```
-
-## Build Command
-
-```python
-nmp run Build
-```
 ## Test Command
 
 ```python
