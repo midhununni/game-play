@@ -23,4 +23,4 @@ dbInit()
 
 
 const httpServer = http.createServer(app);
-httpServer.listen(3000, () => console.log(`Server is running `));
+httpServer.listen(config.server.port, () => console.log(`Server is running ${config.server.hostname}:${config.server.port}`));

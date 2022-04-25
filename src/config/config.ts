@@ -13,12 +13,12 @@ const MYSQL = {
     host: DB_HOST,
     database: DB_NAME,
     user: DB_USER,
-    pass: DB_PASS,
+    password: DB_PASS,
     driver: DB_DRIVER
 };
 
-const SERVER_HOSTNAME = process.env.SERVER_HOSTNAME || 'localhost';
-const SERVER_PORT = process.env.SERVER_PORT || 1337;
+const SERVER_HOSTNAME = process.env.SERVER_HOSTNAME;
+const SERVER_PORT = process.env.SERVER_PORT;
 
 const SERVER = {
     hostname: SERVER_HOSTNAME,
