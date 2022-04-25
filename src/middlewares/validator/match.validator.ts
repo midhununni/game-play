@@ -46,16 +46,11 @@ class MatchValidator {
 
 	checkListMatches(){
 		return [
-			body('id')
-                .notEmpty()
-				.withMessage('The id value should not be empty')
-			    .isInt()
-				.withMessage('The id value should be integer'),
-			body('status')
-                .notEmpty()
-				.withMessage('The status value should not be empty')
-                .isIn(['PUBLISHED', 'LIVE', 'ENDED'])
-				.withMessage('The status value should be PUBLISHED, LIVE or ENDED')
+			param('id')
+			.optional()
+			.isInt()
+			.withMessage('The id value should be integer')
+			    
 		]
 
 	}

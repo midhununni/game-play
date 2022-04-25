@@ -21,8 +21,8 @@ router.post(
 
 router.get(
 	'/list-matches/:user_id?',
-	//MatchValidator.checkListMatches(),
-	//Helper.handleValidationError,
+	MatchValidator.checkListMatches(),
+	Helper.handleValidationError,
 	MatchController.listMatch
 );
 
